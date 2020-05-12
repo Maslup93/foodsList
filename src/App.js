@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Foods from './Components/Foods';
-import AddFood from './Components/AddFood';
+import AddFoods from './Components/AddFoods'
 import { v4 as uuidv4 } from 'uuid';
 
  class App extends Component {
@@ -27,14 +27,12 @@ deleteFoodHandler= (name) => {
   const updatedFoods= this.state.foods.filter(food=> food.name !== name);
   this.setState({foods:updatedFoods})}
 
-  //TO ADD FOOD
+//TO ADD FOOD
 
-addFoodHandler =(food)=> {
-  const newFood = {
-    id: uuidv4
-  }
-this.setState({ foods: [...this.state.foods, newFood]})
+addFood= (foods)=>{
+console.log(foods)
 }
+ 
 
   render() {
   
@@ -58,7 +56,7 @@ this.setState({ foods: [...this.state.foods, newFood]})
     }
     return (
       <div>
-        <AddFood addFood={this.addFoodHandler}/>
+        <AddFoods addFood={this.addFood}/>
         <button onClick={this.toggleFoodHandler}>show food</button>
         
         

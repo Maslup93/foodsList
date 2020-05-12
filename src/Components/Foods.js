@@ -5,7 +5,7 @@ class Foods extends Component {
         return (
             <div>
               <h1>{this.props.pasta}</h1> 
-              
+              <button onClick={this.props.click}>Delete food</button>
             </div>
         )
     }
