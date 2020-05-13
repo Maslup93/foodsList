@@ -31,7 +31,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log('hola');
-    console.log('component mounted!!!!');
+    // console.log('component mounted!!!!');
   }
 
   componentDidUpdate() {
