@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddFoods extends Component {
-  state = {
-    name: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: null,
+    };
+  }
 
   handleChange = (event) => {
     this.setState({

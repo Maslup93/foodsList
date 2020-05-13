@@ -4,10 +4,21 @@ import Foods from './Components/Foods';
 import AddFoods from './Components/AddFoods';
 
 class App extends Component {
-  state = {
-    foods: [{ id: uuidv4(), name: null }],
-    showFood: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      foods: [{ id: uuidv4(), name: null }],
+      showFood: false,
+    };
+  }
+
+  componentDidMount() {
+    console.log('component mounted!!!!');
+  }
+
+  componentDidUpdate() {
+    console.log('component updated!');
+  }
 
   // TO SHOW FOOD
   toggleFoodHandler = () => {
@@ -29,17 +40,8 @@ class App extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log('hola');
-    // console.log('component mounted!!!!');
-  }
-
-  componentDidUpdate() {
-    console.log('component updated!');
-  }
   render() {
     let foods = null;
-    const pt = this.props.pistola;
     if (this.state.showFood) {
       foods = (
         <div>

@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class AddFood extends Component {
-  state = {
-    food: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      food: '',
+    };
+  }
 
   onSubmit = (e) => {
     e.preventDefault();
