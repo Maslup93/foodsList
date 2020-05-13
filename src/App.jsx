@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Foods from './Components/Foods';
 import AddFoods from './Components/AddFoods';
+import Pistolete from './Components/Pistolete';
 
 class App extends Component {
   constructor(props) {
@@ -65,6 +66,7 @@ class App extends Component {
         <AddFoods addFood={this.addFoodHandler} />
         <button onClick={this.toggleFoodHandler}>show food</button>
         {foods}
+        <Pistolete />
       </div>
     );
   }
