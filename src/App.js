@@ -6,10 +6,9 @@ import { v4 as uuidv4 } from 'uuid';
  class App extends Component {
    state= {
     foods: [
-      {id: uuidv4(), name:"Fideos"},
-      {id: uuidv4(), name:"Merluza"},
-      {id: uuidv4(), name:"Tira de asado"},
-      {id: uuidv4(), name:"Deshuesado de pollo"}
+      {id: uuidv4(), 
+      name: null},
+      
     ],
     showFood: false
      }
@@ -24,16 +23,27 @@ toggleFoodHandler= () => {
 //TO DELETE FOOD
 
 deleteFoodHandler= (name) => {
+  
   const updatedFoods= this.state.foods.filter(food=> food.name !== name);
   this.setState({foods:updatedFoods})}
 
-//TO ADD FOOD
+  //TO ADD FOOD
 
-addFood= (foods)=>{
-console.log(foods)
-}
+addFoodHandler=(food)=>{
+let foods= [...this.state.foods, food];
+this.setState({
+  foods:foods
+})
+}  
+
  
+componentDidMount() {
+  console.log("component mounted!!!!")
+}
 
+componentDidUpdate(){
+  console.log("component updated!")
+}
   render() {
   
     let foods = null;
@@ -50,16 +60,16 @@ console.log(foods)
             aves={foodPito.name}
             key={foodPito.id} />
           })}
+   
         </div>
       )
+    
 
     }
     return (
       <div>
-        <AddFoods addFood={this.addFood}/>
+        <AddFoods addFood={this.addFoodHandler} />
         <button onClick={this.toggleFoodHandler}>show food</button>
-        
-        
         {foods}
       </div>
     )

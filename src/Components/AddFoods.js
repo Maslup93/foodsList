@@ -1,24 +1,30 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-export default class AddFoods extends Component {
-    state= {
-        food:''
-    }
+ class AddFoods extends Component {
+   state={
+     name: null
+   }
 
-onChange =(event)=> this.setState({[event.target.name]: event.target.value});
+   handleChange = (event)=>{
+   this.setState({
+     [event.target.id]: event.target.value
+   })
+   }
 
-onSubmit=(event)=>{
-    event.preventDefault();
-    this.props.addFood(this.state.food);
-    this.setState({food:''});
-}
-
+   handleSubmit =(event)=> {
+  event.preventDefault();
+  this.props.addFood(this.state);
+   }
   render() {
     return (
-      <form>
-        <input type="text" name="food" placeholder="Add Food..." value={this.state.food} onSubmit={this.onSubmit} onChange={this.onChange}/>
-        <input type="submit" value="submit" className="btn" />
-      </form>
-    );
+      <div>
+        <form onSubmit={this.handleSubmit} key={this.props.key}>
+          <label htmlFor="name">Food:</label>
+          <input type="text" id="name" onChange={this.handleChange} placeholder="Add Food..."/>
+          <button>submit</button>
+        </form>
+      </div>
+    )
   }
 }
+export default AddFoods;
