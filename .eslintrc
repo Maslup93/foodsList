@@ -1,0 +1,56 @@
+{
+  "env": {
+    "amd": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "react-hooks"],
+  "rules": {
+    "consistent-return": "error",
+    "import/first": ["error", "absolute-first"],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "action": "always",
+        "container": "always",
+        "jpeg": "always",
+        "jpg": "always",
+        "png": "always",
+        "reducer": "always",
+        "saga": "always",
+        "scss": "always",
+        "selector": "always",
+        "service": "always",
+        "svg": "always"
+      }
+    ],
+    "linebreak-style": "off",
+    "no-console": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/no-array-index-key": 2,
+    "react/no-unused-prop-types": 2,
+    "react/no-unused-state": 2,
+    "react/require-default-props": 2,
+    "react/prop-types": "warn"
+
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
