@@ -30,6 +30,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('hola');
     console.log('component mounted!!!!');
   }
 
@@ -38,7 +39,7 @@ class App extends Component {
   }
   render() {
     let foods = null;
-
+    const pt = this.props.pistola;
     if (this.state.showFood) {
       foods = (
         <div>
