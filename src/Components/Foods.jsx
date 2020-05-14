@@ -13,8 +13,11 @@ class Foods extends Component {
 }
 
 Foods.propTypes = {
-  pasta: PropTypes.string.isRequired,
-  click: PropTypes.func.isRequired,
+  pasta: PropTypes.string,
+};
+
+Foods.defaultProps = {
+  pasta: null,
 };
 
 export default Foods;

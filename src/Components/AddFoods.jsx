@@ -5,7 +5,7 @@ class AddFoods extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
+      name: '',
     };
   }
 
@@ -17,7 +17,7 @@ class AddFoods extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.addFood(this.state);
+    this.props.addFood(this.state.name);
   };
   render() {
     return (
@@ -25,7 +25,7 @@ class AddFoods extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Food:</label>
           <input type="text" id="name" onChange={this.handleChange} placeholder="Add Food..." />
-          <button>submit</button>
+          <button disabled={this.state.name.length < 1}>submit</button>
         </form>
       </div>
     );

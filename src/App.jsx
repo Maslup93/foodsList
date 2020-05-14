@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Foods from './Components/Foods';
 import AddFoods from './Components/AddFoods';
-import Pistolete from './Components/Pistolete';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foods: [{ id: uuidv4(), name: null }],
+      foods: [],
       showFood: false,
     };
   }
@@ -28,16 +27,17 @@ class App extends Component {
   };
 
   //TO DELETE FOOD
-  deleteFoodHandler = (name) => {
-    const updatedFoods = this.state.foods.filter((food) => food.name !== name);
+  deleteFoodHandler = (id) => {
+    const updatedFoods = this.state.foods.filter((food) => food.id !== id);
     this.setState({ foods: updatedFoods });
   };
 
   //TO ADD FOOD
-  addFoodHandler = (food) => {
-    let foods = [...this.state.foods, food];
+  addFoodHandler = (foodName) => {
+    const newFood = { name: foodName, id: uuidv4() };
+    const newFoods = [...this.state.foods, newFood];
     this.setState({
-      foods: foods,
+      foods: newFoods,
     });
   };
 
@@ -49,11 +49,8 @@ class App extends Component {
           {this.state.foods.map((foodPito) => {
             return (
               <Foods
-                click={() => this.deleteFoodHandler(foodPito.name)}
+                click={() => this.deleteFoodHandler(foodPito.id)}
                 pasta={foodPito.name}
-                pescado={foodPito.name}
-                carne={foodPito.name}
-                aves={foodPito.name}
                 key={foodPito.id}
               />
             );
@@ -64,9 +61,10 @@ class App extends Component {
     return (
       <div>
         <AddFoods addFood={this.addFoodHandler} />
-        <button onClick={this.toggleFoodHandler}>show food</button>
+        <button disabled={this.state.foods.length < 1} onClick={this.toggleFoodHandler}>
+          show food
+        </button>
         {foods}
-        <Pistolete />
       </div>
     );
   }
