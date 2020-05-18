@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
+import ProductList from './Components/ProductList';
 import FoodList from './Components/FoodList';
-import IngredientList from './Components/IngredientList';
 import Header from './Components/Layout/Header';
 
 class App extends Component {
@@ -10,7 +9,7 @@ class App extends Component {
       <div>
         <Header />
         <FoodList />
-        <IngredientList />
+        <ProductList />
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Ingredients extends Component {
+class product extends Component {
   render() {
     return (
-      <div style={ingredientsStyle}>
-        <h3>{this.props.ingrprop}</h3>
+      <div style={productStyle}>
+        <h3>{this.props.pasta}</h3>
         <button style={btnStyle} onClick={this.props.click}>
           X
         </button>
@@ -14,20 +14,18 @@ class Ingredients extends Component {
   }
 }
 
-Ingredients.propTypes = {
-  ingrprop: PropTypes.string,
+product.propTypes = {
+  pasta: PropTypes.string,
 };
 
-Ingredients.defaultProps = {
-  ingrprop: null,
+product.defaultProps = {
+  pasta: null,
 };
 
-const ingredientsStyle = {
+const productStyle = {
   backgroundColor: '#c7ccd4',
-  border: '1px solid black',
-
   padding: '10px',
-  borderBottom: '1px #ccc ',
+  borderBottom: '1px #ccc dotted',
 };
 const btnStyle = {
   background: '#ff0000',
@@ -38,4 +36,4 @@ const btnStyle = {
   cursor: 'pointer',
 };
 
-export default Ingredients;
+export default product;
