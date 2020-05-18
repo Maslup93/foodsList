@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../App.css';
 
 class AddFoods extends Component {
   constructor(props) {
@@ -24,8 +25,16 @@ class AddFoods extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Food:</label>
-          <input type="text" id="name" onChange={this.handleChange} placeholder="Add Food..." />
-          <button disabled={this.state.name.length < 1}>submit</button>
+          <input
+            type="text"
+            id="name"
+            onChange={this.handleChange}
+            placeholder="Add Food..."
+            style={{ flex: '10', padding: '5px' }}
+          />
+          <button className="btn" disabled={this.state.name.length < 1} style={{ flex: '1' }}>
+            submit
+          </button>
         </form>
       </div>
     );

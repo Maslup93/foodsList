@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.btn {
+  display: inline-block;
+  border: 1px solid black;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

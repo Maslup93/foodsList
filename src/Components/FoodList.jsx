@@ -61,7 +61,11 @@ class FoodList extends Component {
     return (
       <div>
         <AddFoods addFood={this.addFoodHandler} />
-        <button disabled={this.state.foods.length < 1} onClick={this.toggleFoodHandler}>
+        <button
+          className="btn"
+          disabled={this.state.foods.length < 1}
+          onClick={this.toggleFoodHandler}
+        >
           show food
         </button>
         {foods}

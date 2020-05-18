@@ -99,11 +99,14 @@ class IngredientList extends Component {
 
     return (
       <div>
-        <button onClick={this.toggleIngredientsHandler}>show ingredients!</button>
+        <button className="btn" onClick={this.toggleIngredientsHandler}>
+          show ingredients!
+        </button>
 
         {ingredients}
       </div>
     );
   }
 }
+
 export default IngredientList;
