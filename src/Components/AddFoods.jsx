@@ -20,6 +20,7 @@ class AddFoods extends Component {
     event.preventDefault();
     this.props.addFood(this.state.name);
   };
+
   render() {
     return (
       <div>

@@ -61,6 +61,7 @@ class FoodList extends Component {
     return (
       <div>
         <AddFoods addFood={this.addFoodHandler} />
+
         <button
           className="btn"
           disabled={this.state.foods.length < 1}
@@ -68,6 +69,7 @@ class FoodList extends Component {
         >
           show food
         </button>
+
         {foods}
       </div>
     );
