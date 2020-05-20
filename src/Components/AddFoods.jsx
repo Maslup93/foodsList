@@ -25,7 +25,7 @@ class AddFoods extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Food:</label>
+          <label htmlFor="name">Food: </label>
           <input
             type="text"
             id="name"

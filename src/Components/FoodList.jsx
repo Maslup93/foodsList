@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Accordion, Card, Button } from 'react-bootstrap';
+
 import { v4 as uuidv4 } from 'uuid';
 import Foods from './Foods';
 import AddFoods from './AddFoods';
@@ -61,16 +63,23 @@ class FoodList extends Component {
     return (
       <div>
         <AddFoods addFood={this.addFoodHandler} />
-
-        <button
-          className="btn"
-          disabled={this.state.foods.length < 1}
-          onClick={this.toggleFoodHandler}
-        >
-          show food
-        </button>
-
-        {foods}
+        <Accordion>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle
+                onClick={this.toggleFoodHandler}
+                as={Button}
+                variant="link"
+                eventKey="0"
+              >
+                Show Food
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>{foods}</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       </div>
     );
   }

@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import ProductList from './Components/ProductList';
 import FoodList from './Components/FoodList';
-import Header from './Components/Layout/Header';
+
+import NavBar from './Components/NavBar';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <NavBar />
+
         <FoodList />
+        <navBar />
         <ProductList />
       </div>
     );

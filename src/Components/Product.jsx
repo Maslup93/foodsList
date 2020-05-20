@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 
 class product extends Component {
@@ -6,9 +7,9 @@ class product extends Component {
     return (
       <div style={productStyle}>
         <h3>{this.props.pasta}</h3>
-        <button style={btnStyle} onClick={this.props.click}>
-          X
-        </button>
+        <Button className="delete-button" onClick={this.props.click} variant="danger">
+          Delete Food
+        </Button>
       </div>
     );
   }

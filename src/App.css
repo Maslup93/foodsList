@@ -6,7 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.delete-button {
+  position: absolute;
+  bottom: 25px;
+  left: 85%;
+}
 .btn {
   display: inline-block;
   border: 1px solid black;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Accordion, Card, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import Product from './Product';
 import AddProduct from './AddProduct';
@@ -61,14 +62,23 @@ class productList extends Component {
     return (
       <div>
         <AddProduct addProduct={this.addFoodHandler} />
-        <button
-          className="btn"
-          disabled={this.state.products.length < 1}
-          onClick={this.toggleFoodHandler}
-        >
-          show product
-        </button>
-        {products}
+        <Accordion>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle
+                onClick={this.toggleFoodHandler}
+                as={Button}
+                variant="link"
+                eventKey="0"
+              >
+                Show Food
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>{products}</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       </div>
     );
   }
