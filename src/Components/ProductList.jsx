@@ -22,7 +22,7 @@ class productList extends Component {
   }
 
   // TO SHOW PRODUCT
-  toggleFoodHandler = () => {
+  toggleProductHandler = () => {
     const doesShow = this.state.showProduct;
     this.setState({ showProduct: !doesShow });
   };
@@ -66,7 +66,7 @@ class productList extends Component {
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                onClick={this.toggleFoodHandler}
+                onClick={this.toggleProductHandler}
                 as={Button}
                 variant="link"
                 eventKey="0"

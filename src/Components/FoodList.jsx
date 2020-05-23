@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
-
 import { v4 as uuidv4 } from 'uuid';
 import Foods from './Foods';
 import AddFoods from './AddFoods';

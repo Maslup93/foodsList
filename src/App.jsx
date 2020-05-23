@@ -9,9 +9,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-
         <FoodList />
-        <navBar />
         <ProductList />
       </div>
     );
