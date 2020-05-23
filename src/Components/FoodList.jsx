@@ -37,6 +37,7 @@ class FoodList extends Component {
   addFoodHandler = (foodName) => {
     const newFood = { name: foodName, id: uuidv4() };
     const newFoods = [...this.state.foods, newFood];
+    newFoods.sort((a, b) => (a.name > b.name ? 1 : -1));
     this.setState({
       foods: newFoods,
     });
