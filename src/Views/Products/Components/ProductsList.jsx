@@ -58,7 +58,7 @@ class ProductsList extends Component {
               <Accordion.Toggle
                 onClick={this.toggleShowList}
                 as={Button}
-                variant="primary"
+                variant="secondary"
                 eventKey="productsList"
               >
                 {this.state.showingList ? 'Hide Products' : 'Show Products'}

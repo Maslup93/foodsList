@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
-import '../styles.css';
 
 class AddProduct extends Component {
   constructor(props) {
