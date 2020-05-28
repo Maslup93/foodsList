@@ -1,41 +1,42 @@
 import React from 'react';
-import * as ReactBootstrap from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
-const navBar = () => {
+const NavigationBar = () => {
+  const history = useHistory();
+
+  const redirectTo = (event) => {
+    history.push(event.target.id);
+  };
+
   return (
     <div>
-      <ReactBootstrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <ReactBootstrap.Navbar.Brand href="#home">Foods List</ReactBootstrap.Navbar.Brand>
-        <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
-          <ReactBootstrap.Nav className="mr-auto">
-            <ReactBootstrap.Nav.Link href="#features">Features</ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link href="#pricing">Pricing</ReactBootstrap.Nav.Link>
-            <ReactBootstrap.NavDropdown title="More" id="collasible-nav-dropdown">
-              <ReactBootstrap.NavDropdown.Item href="#action/3.1">
-                Recipes
-              </ReactBootstrap.NavDropdown.Item>
-              <ReactBootstrap.NavDropdown.Item href="#action/3.2">
-                Products
-              </ReactBootstrap.NavDropdown.Item>
-              <ReactBootstrap.NavDropdown.Item href="#action/3.3">
-                Foods
-              </ReactBootstrap.NavDropdown.Item>
-              <ReactBootstrap.NavDropdown.Divider />
-              <ReactBootstrap.NavDropdown.Item href="#action/3.4">
-                Separated link
-              </ReactBootstrap.NavDropdown.Item>
-            </ReactBootstrap.NavDropdown>
-          </ReactBootstrap.Nav>
-          <ReactBootstrap.Nav>
-            <ReactBootstrap.Nav.Link href="#deets">More deets</ReactBootstrap.Nav.Link>
-            <ReactBootstrap.Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </ReactBootstrap.Nav.Link>
-          </ReactBootstrap.Nav>
-        </ReactBootstrap.Navbar.Collapse>
-      </ReactBootstrap.Navbar>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand href="/">Foods List</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          {/*<Nav className="mr-auto">*/}
+          {/*  <Nav.Link href="#features">Features</Nav.Link>*/}
+          {/*  <Nav.Link href="#pricing">Pricing</Nav.Link>*/}
+          {/*  <NavDropdown title="More" id="collasible-nav-dropdown">*/}
+          {/*    <NavDropdown.Item href="#action/3.1">Recipes</NavDropdown.Item>*/}
+          {/*    <NavDropdown.Item href="#action/3.2">Products</NavDropdown.Item>*/}
+          {/*    <NavDropdown.Item href="#action/3.3">Foods</NavDropdown.Item>*/}
+          {/*    <NavDropdown.Divider />*/}
+          {/*    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>*/}
+          {/*  </NavDropdown>*/}
+          {/*</Nav>*/}
+          <Nav className="ml-auto">
+            <Nav.Link onClick={redirectTo} id="products">
+              Products
+            </Nav.Link>
+            <Nav.Link onClick={redirectTo} id="foods">
+              Foods
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 };
-export default navBar;
+export default NavigationBar;
