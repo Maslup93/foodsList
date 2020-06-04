@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 class Foods extends Component {
   render() {
     return (
-      <div style={foodsStyle}>
-        <h4>{this.props.pasta}</h4>
-        <Button className="delete-button" onClick={this.props.click} variant="danger">
-          Delete Food
-        </Button>
-      </div>
+      <tr>
+        <td>{this.props.position}</td>
+        <td>{this.props.name}</td>
+        <td>
+          <Button onClick={this.props.click} size="sm" variant="danger" className="float-right">
+            Delete
+          </Button>
+        </td>
+      </tr>
     );
   }
 }
 
 Foods.propTypes = {
-  pasta: PropTypes.string,
-};
-
-Foods.defaultProps = {
-  pasta: null,
-};
-
-const foodsStyle = {
-  backgroundColor: '#c7ccd4',
-  padding: '10px',
+  name: PropTypes.string.isRequired,
+  click: PropTypes.func.isRequired,
+  position: PropTypes.number.isRequired,
 };
 
 export default Foods;

@@ -1,3 +1,3 @@
-import FoodList from './FoodList';
+import FoodsPage from './FoodsPage';
 
-export default FoodList;
+export default FoodsPage;

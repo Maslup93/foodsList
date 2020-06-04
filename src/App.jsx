@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 // Components
 import MainContainer from './Components/MainContainer';
 import NavBar from './Components/NavBar';
+
 // Views
 import ProductsPage from './Views/Products';
-import FoodList from './Views/Foods';
+import FoodsPage from './Views/Foods/FoodsPage';
+import RecipesPage from './Views/Recipes/RecipesPage';
 
 class App extends Component {
   render() {
@@ -13,13 +15,17 @@ class App extends Component {
       <Fragment>
         <Router>
           <NavBar />
+
           <MainContainer>
             <Switch>
+              <Route path="/Recipes">
+                <RecipesPage />
+              </Route>
               <Route path="/products">
                 <ProductsPage />
               </Route>
               <Route path="/foods">
-                <FoodList />
+                <FoodsPage />
               </Route>
               <Redirect from="*" to="/products" />
             </Switch>

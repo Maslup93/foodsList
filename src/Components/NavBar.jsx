@@ -27,6 +27,9 @@ const NavigationBar = () => {
           {/*  </NavDropdown>*/}
           {/*</Nav>*/}
           <Nav className="ml-auto">
+            <Nav.Link onClick={redirectTo} id="Recipes">
+              Recipes
+            </Nav.Link>
             <Nav.Link onClick={redirectTo} id="products">
               Products
             </Nav.Link>

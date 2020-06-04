@@ -31,6 +31,7 @@ class ProductsPage extends Component {
   addFoodHandler = (productName) => {
     const newProduct = { name: productName, id: uuidv4() };
     const newProducts = [...this.state.products, newProduct];
+    newProducts.sort((a, b) => (a.name > b.name ? 1 : -1));
     this.setState({
       products: newProducts,
     });
