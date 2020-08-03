@@ -12,7 +12,7 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">Foods List</Navbar.Brand>
+        <Navbar.Brand href="/">Diary Book</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {/*<Nav className="mr-auto">*/}
@@ -27,13 +27,14 @@ const NavigationBar = () => {
           {/*  </NavDropdown>*/}
           {/*</Nav>*/}
           <Nav className="ml-auto">
-            <Nav.Link onClick={redirectTo} id="Recipes">
-              Recipes
+            <Nav.Link onClick={redirectTo} id="DiaryBook">
+              Diary Book
             </Nav.Link>
+
             <Nav.Link onClick={redirectTo} id="products">
               Products
             </Nav.Link>
-            <Nav.Link onClick={redirectTo} id="foods">
+            <Nav.Link onClick={redirectTo} id="Foods">
               Foods
             </Nav.Link>
           </Nav>
