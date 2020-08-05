@@ -18,7 +18,7 @@ class PopUp extends Component {
             <Modal.Title id="contained-modal-title-vcenter">Add Transaction</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <DropdownButton />
+            <DropdownButton addItem={this.props.addTransaction} />
           </Modal.Body>
 
           <Modal.Footer>
@@ -45,6 +45,7 @@ class PopUp extends Component {
 PopUp.propTypes = {
   show: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
+  addTransaction: PropTypes.func.isRequired,
 };
 
 PopUp.defaultProps = {

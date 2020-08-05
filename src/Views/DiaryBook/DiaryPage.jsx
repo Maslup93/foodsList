@@ -23,11 +23,24 @@ class DiaryPage extends Component {
     this.setState({ modalShow: true });
   };
 
+  //TO DISPLAY DATE
+
   displayCurrentDate = () => {
     const today = new Date();
 
     const date = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
     return date;
+  };
+
+  //TO ADD ITEMS TO ARRAY
+
+  transactionToList = (itemName) => {
+    const newTransaction = { name: itemName };
+    const newList = [...this.state.item, newTransaction];
+    newList.sort((a, b) => (a.name > b.name ? 1 : -1));
+    this.setState({
+      item: newList,
+    });
   };
 
   render() {
@@ -69,7 +82,11 @@ class DiaryPage extends Component {
             </Col>
           </Row>
         </Container>
-        <PopUp show={this.state.modalShow} handleClose={this.closePopupHandler} />
+        <PopUp
+          show={this.state.modalShow}
+          handleClose={this.closePopupHandler}
+          addTransaction={this.transactionToList}
+        />
       </Fragment>
     );
   }
