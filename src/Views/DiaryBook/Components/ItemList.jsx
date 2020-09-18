@@ -36,7 +36,7 @@ class ItemList extends Component {
               return (
                 <Item
                   click={() => this.props.deleteItemHandler(item.id)}
-                  name={item.name}
+                  name={item.itemName}
                   key={item.id}
                   position={index + 1}
                 />

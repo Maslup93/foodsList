@@ -17,7 +17,7 @@ class DiaryPage extends Component {
   closePopupHandler = () => {
     this.setState({ modalShow: false });
   };
-  //TO POOPUP THE POOPUP
+  //TO POPUP THE POPUP
 
   openPopupHandler = () => {
     this.setState({ modalShow: true });
@@ -28,6 +28,13 @@ class DiaryPage extends Component {
 
     const date = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
     return date;
+  };
+
+  addItemHandler = (itemName) => {
+    const newItem = { itemName: itemName };
+    const newList = [...this.state.item, newItem];
+    this.setState({ item: newList });
+    console.log(newList);
   };
 
   render() {
@@ -69,7 +76,11 @@ class DiaryPage extends Component {
             </Col>
           </Row>
         </Container>
-        <PopUp show={this.state.modalShow} handleClose={this.closePopupHandler} />
+        <PopUp
+          addItem={this.addItemHandler}
+          show={this.state.modalShow}
+          handleClose={this.closePopupHandler}
+        />
       </Fragment>
     );
   }

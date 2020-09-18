@@ -4,6 +4,21 @@ import PropTypes from 'prop-types';
 import DropdownButton from './DropdownButton';
 
 class PopUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      itemName: '',
+    };
+  }
+  handleChange = (event) => {
+    this.setState({ itemName: event.target.value });
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addItem(this.state.itemName);
+    this.setState({ itemName: '' });
+  };
+
   render() {
     return (
       <div>
@@ -18,7 +33,7 @@ class PopUp extends Component {
             <Modal.Title id="contained-modal-title-vcenter">Add Transaction</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <DropdownButton />
+            <DropdownButton change={this.handleChange} />
           </Modal.Body>
 
           <Modal.Footer>
@@ -31,7 +46,13 @@ class PopUp extends Component {
             >
               Cancel
             </Button>
-            <Button className="float-right" variant="primary" type="submit" size="sm">
+            <Button
+              onClick={this.handleSubmit}
+              className="float-right"
+              variant="primary"
+              type="submit"
+              size="sm"
+            >
               {' '}
               Save
             </Button>
@@ -45,6 +66,7 @@ class PopUp extends Component {
 PopUp.propTypes = {
   show: PropTypes.bool,
   handleClose: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
 };
 
 PopUp.defaultProps = {

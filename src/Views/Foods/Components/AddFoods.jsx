@@ -31,7 +31,7 @@ class AddFood extends Component {
             type="string"
             placeholder="Food Name"
             onChange={this.handleChange}
-            id="name"
+            id="itemName"
             value={this.state.name}
           />
           <Form.Text className="text-muted">
