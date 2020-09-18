@@ -7,7 +7,8 @@ import NavBar from './Components/NavBar';
 // Views
 import ProductsPage from './Views/Products';
 import FoodsPage from './Views/Foods/FoodsPage';
-import TransactionsPage from './Views/Transactions/TransactionsPage';
+
+import DiaryPage from './Views/DiaryBook/DiaryPage';
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
           <MainContainer>
             <Switch>
               <Route path="/Transactions">
-                <TransactionsPage />
+                <DiaryPage />
               </Route>
               <Route path="/products">
                 <ProductsPage />
